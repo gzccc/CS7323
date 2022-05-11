@@ -1,0 +1,12 @@
+Group Member:
+Zicheng Geng
+
+Q: If you made the FFT Magnitude Buffer a larger array, would your program still work properly? If yes, why? If not, what would you need to change?
+
+A: No. FFT requires 2 complex numbers to add up and we need the magnitude to have an even symmetry to ignore half of the waves. numPointsInGraph needs to be less than or equal to half of the buffer size.
+
+
+Q: Is pausing the audioManager object better than deallocating it when the view has disappeared (explain your reasoning)?
+
+A: Yes. Because pausing the audioManager object only pauses the dispatch timer for audio retrieving while deallocating the audioManager object will cause memory to be deallocated, which consumes more resources since allocating and deallocating uses memory. So pausing is more efficient.
+
